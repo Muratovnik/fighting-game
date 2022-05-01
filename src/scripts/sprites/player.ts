@@ -1,7 +1,6 @@
-import Sprite from "./sprite";
-
-export default class Player extends Sprite {
-  constructor(options: CommonSprite) {
+import GravitableSprite from "./gravitableSprite";
+export default class Player extends GravitableSprite {
+  constructor(options: GravitableSpriteOptions) {
     super(options);
   }
 }

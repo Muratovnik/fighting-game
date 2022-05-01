@@ -1,18 +1,28 @@
 /// <reference types="vite/client" />
 
-type Position = {
-    x: number,
-    y: number
+type Coordinatable = {
+  x: number,
+  y: number
 }
 
+type Axes = "x" | "y";
+
 type Size = {
-    width: number,
-    height: number
+  width: number,
+  height: number
 }
 
 type CommonSprite = {
-    position: Position,
-    size: Size,
-    color: string,
-    ctx: CanvasRenderingContext2D
+  position: Coordinatable,
+  size: Size,
+  color: string,
+  ctx: CanvasRenderingContext2D
+}
+
+type MoveableSpriteOptions = CommonSprite & {
+  velocity: Coordinatable
+}
+
+type GravitableSpriteOptions = MoveableSpriteOptions & {
+  gravity: number
 }
